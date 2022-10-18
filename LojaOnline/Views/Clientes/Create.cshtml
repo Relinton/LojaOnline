@@ -1,0 +1,59 @@
+﻿@model LojaOnline.Models.Cliente
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Cliente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <p>Endereço Residencial</p>
+            <div class="form-group">
+                <label asp-for="EnderecoDeEntrega.Logradouro" class="control-label"></label>
+                <input asp-for="EnderecoDeEntrega.Logradouro" class="form-control" />
+                <span asp-validation-for="EnderecoDeEntrega.Logradouro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnderecoDeEntrega.Numero" class="control-label"></label>
+                <input asp-for="EnderecoDeEntrega.Numero" class="form-control" />
+                <span asp-validation-for="EnderecoDeEntrega.Numero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnderecoDeEntrega.Bairro" class="control-label"></label>
+                <input asp-for="EnderecoDeEntrega.Bairro" class="form-control" />
+                <span asp-validation-for="EnderecoDeEntrega.Bairro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnderecoDeEntrega.Cidade" class="control-label"></label>
+                <input asp-for="EnderecoDeEntrega.Cidade" class="form-control" />
+                <span asp-validation-for="EnderecoDeEntrega.Cidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnderecoDeEntrega.Uf" class="control-label"></label>
+                <input asp-for="EnderecoDeEntrega.Uf" class="form-control" />
+                <span asp-validation-for="EnderecoDeEntrega.Uf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
